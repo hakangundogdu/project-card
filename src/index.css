@@ -149,7 +149,7 @@ body {
   margin: 1rem 0rem;
   border-radius: 50%;
   border: 2px solid var(--clr-neutral-white);
-  width: 10%;
+  width: 40px;
 }
 
 /* Project Hover */
@@ -191,42 +191,15 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 375px) {
-  .container {
-    margin: 5.3rem auto;
-  }
-
-  .card {
+@media (max-width: 800px) {
+  .project-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  .card-text {
-    order: 2;
-    padding: 2.6rem 2rem 2rem 2rem;
-    text-align: center;
-  }
-
-  .card-text-title {
-    font-size: 1.8rem;
-    line-height: 2.1rem;
-  }
-
-  .card-text-copy {
-    margin-bottom: 2.6rem;
-  }
-
-  .card-text-stats {
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  .card-image {
-    order: 1;
+  .project-card,
+  .new-project-card {
     width: 100%;
-  }
-
-  .img-bw {
-    height: 16rem;
+    height: 144.5px;
   }
 }
