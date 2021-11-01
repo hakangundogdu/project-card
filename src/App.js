@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import search from './images/search.svg';
+import plus from './images/plus.svg';
+import daniel from './images/image-daniel.jpg';
+import kira from './images/image-kira.jpg';
+import patrick from './images/image-patrick.jpg';
+import Project from './Project';
+import NewProject from './NewProject.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="card">
+          <header className="header">
+            <h3 className="title">Projects</h3>
+            <div className="button">
+              <img className="plus" src={plus} alt="plus" />
+              <p className="button-text">New</p>
+            </div>
+          </header>
+          <form className="search-box">
+            <img className="search" src={search} alt="search" />
+            <input className="input" placeholder="Filter projects" />
+          </form>
+          <Project
+            project_title="API Integration"
+            project_department="Engineering"
+            image_url={daniel}
+          />
+          <Project
+            project_title="New Benefits Plan"
+            project_department="Human Resources"
+            image_url={kira}
+          />
+          <Project
+            project_title="Onboarding Emails"
+            project_department="Customer Success "
+            image_url={patrick}
+          />
+          <NewProject />
+        </div>
+      </div>
     </div>
   );
 }
