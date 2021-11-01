@@ -5,7 +5,7 @@ const Project = (props) => {
     <div className="project-card">
       <h2 className="project-title">{props.project_title}</h2>
       <p className="project-department">{props.project_department}</p>
-      <img className="person-image" src={propgs.image_url} />
+      <img className="person-image" src={props.image_url} />
     </div>
   );
 };
