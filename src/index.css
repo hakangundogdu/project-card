@@ -196,6 +196,19 @@ body {
 
 /* Media Queries */
 @media (max-width: 800px) {
+  .App {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
   .project-container {
     display: flex;
     flex-direction: column;
