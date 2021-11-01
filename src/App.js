@@ -21,24 +21,26 @@ function App() {
           </header>
           <form className="search-box">
             <img className="search" src={search} alt="search" />
-            <input className="input" placeholder="Filter projects" />
+            <input className="input-text" placeholder="Filter projects" />
           </form>
-          <Project
-            project_title="API Integration"
-            project_department="Engineering"
-            image_url={daniel}
-          />
-          <Project
-            project_title="New Benefits Plan"
-            project_department="Human Resources"
-            image_url={kira}
-          />
-          <Project
-            project_title="Onboarding Emails"
-            project_department="Customer Success "
-            image_url={patrick}
-          />
-          <NewProject />
+          <div className="project-container">
+            <Project
+              project_title="API Integration"
+              project_department="Engineering"
+              image_url={daniel}
+            />
+            <Project
+              project_title="New Benefits Plan"
+              project_department="Human Resources"
+              image_url={kira}
+            />
+            <Project
+              project_title="Onboarding Emails"
+              project_department="Customer Success "
+              image_url={patrick}
+            />
+            <NewProject />
+          </div>
         </div>
       </div>
     </div>
