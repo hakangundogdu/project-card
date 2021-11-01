@@ -197,7 +197,7 @@ body {
 /* Media Queries */
 @media (max-width: 800px) {
   .App {
-    margin: 20px 0;
+    margin: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,6 +207,9 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 100%;
+  }
+  .card {
+    width: 85%;
   }
 
   .project-container {
