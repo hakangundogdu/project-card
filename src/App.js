@@ -8,6 +8,27 @@ import Project from './Project';
 import NewProject from './NewProject.js';
 
 function App() {
+  const projects = [
+    {
+      id: 'p1',
+      project_title: 'API Integration',
+      project_department: 'Engineering',
+      image_url: 'daniel',
+    },
+    {
+      id: 'p2',
+      project_title: 'New Benefits Plan',
+      project_department: 'Human Resources',
+      image_url: 'kira',
+    },
+    {
+      id: 'p3',
+      project_title: 'Onboarding Emails',
+      project_department: 'Customer Success',
+      image_url: 'patrick',
+    },
+  ];
+
   return (
     <div className="App">
       <div className="container">
@@ -23,6 +44,15 @@ function App() {
             <img className="search" src={search} alt="search" />
             <input className="input-text" placeholder="Filter projects" />
           </form>
+          <div className="project-container">
+            {projects.map((project) => (
+              <Project
+                project_title={project.project_title}
+                project_department={project.project_department}
+                image_url={project.image_url}
+              />
+            ))}
+          </div>
           <div className="project-container">
             <Project
               project_title="API Integration"
