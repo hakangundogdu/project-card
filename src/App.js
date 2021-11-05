@@ -7,28 +7,28 @@ import patrick from './images/image-patrick.jpg';
 import Project from './Project';
 import NewProject from './NewProject.js';
 
-function App() {
-  const projects = [
-    {
-      id: 'p1',
-      project_title: 'API Integration',
-      project_department: 'Engineering',
-      image_url: 'daniel',
-    },
-    {
-      id: 'p2',
-      project_title: 'New Benefits Plan',
-      project_department: 'Human Resources',
-      image_url: 'kira',
-    },
-    {
-      id: 'p3',
-      project_title: 'Onboarding Emails',
-      project_department: 'Customer Success',
-      image_url: 'patrick',
-    },
-  ];
+const projects = [
+  {
+    id: 'p1',
+    project_title: 'API Integration',
+    project_department: 'Engineering',
+    image_url: daniel,
+  },
+  {
+    id: 'p2',
+    project_title: 'New Benefits Plan',
+    project_department: 'Human Resources',
+    image_url: kira,
+  },
+  {
+    id: 'p3',
+    project_title: 'Onboarding Emails',
+    project_department: 'Customer Success',
+    image_url: patrick,
+  },
+];
 
+function App() {
   return (
     <div className="App">
       <div className="container">
@@ -52,23 +52,6 @@ function App() {
                 image_url={project.image_url}
               />
             ))}
-          </div>
-          <div className="project-container">
-            <Project
-              project_title="API Integration"
-              project_department="Engineering"
-              image_url={daniel}
-            />
-            <Project
-              project_title="New Benefits Plan"
-              project_department="Human Resources"
-              image_url={kira}
-            />
-            <Project
-              project_title="Onboarding Emails"
-              project_department="Customer Success "
-              image_url={patrick}
-            />
             <NewProject />
           </div>
         </div>
