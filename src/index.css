@@ -68,27 +68,20 @@ body {
 }
 
 .button {
-  background-color: var(--clr-primary-light-bg1);
+  background-color: var(--clr-primary-light-bg2);
   border-radius: 0.5rem;
-  display: flex;
   padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: space-between;
+  color: var(--clr-primary-light-blue);
 }
 
 .button:hover {
-  background-color: var(--clr-primary-light-bg2);
+  background-color: var(--clr-primary-light-blue);
+  cursor: pointer;
+  color: var(--clr-neutral-white);
 }
 
-.button-text {
-  color: var(--clr-primary-light-blue);
-  padding-left: 0.5rem;
-}
-
-.plus {
-  fill: var(--clr-primary-light-blue);
-  width: 1rem;
-  height: 1rem;
+.button:active {
+  transform: translateY(1px);
 }
 
 .search-box {
@@ -192,6 +185,86 @@ body {
   border-radius: 0.5rem;
   font-size: 0.9rem;
   color: var(--clr-neutral-text);
+}
+
+/* Project Form */
+.project-form {
+  width: calc((100% - 1rem) / 2);
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 2px dashed #e4e4e7;
+  border-radius: 0.5rem;
+}
+.user-list > p {
+  color: var(--clr-neutral-text);
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.userimage {
+  border-radius: 50%;
+  border: 2px solid var(--clr-neutral-white);
+  width: 40px;
+  filter: grayscale(1);
+}
+
+.user-name {
+  font-size: 0.9rem;
+  color: var(--clr-neutral-text);
+  margin-top: 0.5rem;
+}
+
+.user:hover .userimage {
+  filter: grayscale(0);
+  transform: translateY(-1px);
+}
+
+.user:hover .user-name {
+  color: var(--clr-neutral-title);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.cancel-button {
+  background-color: var(--clr-primary-light-bg1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--clr-primary-light-blue);
+  margin-right: 0.5rem;
+}
+
+.cancel-button:hover {
+  background-color: var(--clr-primary-light-bg2);
+  cursor: pointer;
+  color: var(--clr-primary-light-blue);
+}
+
+.cancel-button:active {
+  transform: translateY(1px);
 }
 
 /* Media Queries */
