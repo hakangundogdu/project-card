@@ -6,7 +6,6 @@ import kira from './images/image-kira.jpg';
 import patrick from './images/image-patrick.jpg';
 import Project from './Project';
 import NewProject from './NewProject';
-import ProjectForm from './ProjectForm';
 
 const DUMMY_PROJECTS = [
   {
@@ -60,9 +59,7 @@ const App = () => {
               </div>
             )}
           </header>
-          <div>
-            {isEditing && <ProjectForm onCancel={stopEditingHandler} />}
-          </div>
+          <div>{isEditing && <NewProject onCancel={stopEditingHandler} />}</div>
 
           <form className="search-box">
             <img className="search" src={search} alt="search" />
