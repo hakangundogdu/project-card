@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Users from './User';
+import User from './User';
 import daniel from './images/image-daniel.jpg';
 import kira from './images/image-kira.jpg';
 import patrick from './images/image-patrick.jpg';
@@ -8,6 +8,7 @@ const NewProject = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredDepartment, setEnteredDepartment] = useState('');
   const [enteredPerson, setEnteredPerson] = useState('');
+  const [selected, setSelected] = useState(false);
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -17,8 +18,11 @@ const NewProject = (props) => {
     setEnteredDepartment(event.target.value);
   };
 
-  const personChangeHandler = (event) => {
-    setEnteredPerson(event.target.value);
+  const personChangeHandler = (url) => {
+    console.log('personcChangeHandler', url);
+    setEnteredPerson(url);
+
+    setSelected(true);
   };
 
   const submitHandler = (event) => {
@@ -75,19 +79,16 @@ const NewProject = (props) => {
           onChange={departmentChangeHandler}
         />
       </div>
-      <div className="search-box">
-        <input
-          className="input-text"
-          placeholder="Person"
-          value={enteredPerson}
-          onChange={personChangeHandler}
-        />
-      </div>
       <div className="user-list">
         <p>Please choose a person</p>
         <div className="user-container">
           {users.map((user) => (
-            <Users user_name={user.user_name} image_url={user.image_url} />
+            <User
+              selected={selected}
+              onClick={() => personChangeHandler(user.image_url)}
+              user_name={user.user_name}
+              image_url={user.image_url}
+            />
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Project = (props) => {
-  console.log(props.image_url);
+  console.log('userurl', props.image_url);
 
   return (
     <div className="project-card">

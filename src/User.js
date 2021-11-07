@@ -1,10 +1,10 @@
 import React from 'react';
 
-const User = (props) => {
+const User = ({ onClick, image_url, user_name, selected }) => {
   return (
-    <div className="user">
-      <img className="userimage" src={props.image_url} alt={props.user_name} />
-      <p className="user-name">{props.user_name}</p>
+    <div onClick={onClick} className={`user ${selected ? 'selected' : ''} `}>
+      <img className="userimage" src={image_url} alt={user_name} />
+      <p className="user-name">{user_name}</p>
     </div>
   );
 };
