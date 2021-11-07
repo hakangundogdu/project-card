@@ -4,7 +4,40 @@ import daniel from './images/image-daniel.jpg';
 import kira from './images/image-kira.jpg';
 import patrick from './images/image-patrick.jpg';
 
-const ProjectForm = (props) => {
+const NewProject = (props) => {
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredDepartment, setEnteredDepartment] = useState('');
+  const [enteredPerson, setEnteredPerson] = useState('');
+
+  const titleChangeHandler = (event) => {
+    setEnteredTitle(event.target.value);
+  };
+
+  const departmentChangeHandler = (event) => {
+    setEnteredDepartment(event.target.value);
+  };
+
+  // will change
+  //const personChangeHandler = (event) => {
+  //setEnteredPerson(event.target.value); }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const projectData = {
+      id: Math.random().toString(),
+      project_title: enteredTitle,
+      project_department: enteredDepartment,
+      image_url: enteredPerson,
+    };
+    props.onAddProject(projectData);
+    props.onCancel();
+
+    setEnteredTitle('');
+    setEnteredDepartment('');
+    setEnteredPerson('');
+  };
+
   const users = [
     {
       id: 'u1',
@@ -22,14 +55,25 @@ const ProjectForm = (props) => {
       image_url: patrick,
     },
   ];
+
   return (
-    <form className="project-form">
+    <form className="project-form" onSubmit={submitHandler}>
       <h2 className="project-title">Add a New Project</h2>
       <form className="search-box">
-        <input className="input-text" placeholder="Project Title" />
+        <input
+          className="input-text"
+          placeholder="Project Title"
+          value={enteredTitle}
+          onChange={titleChangeHandler}
+        />
       </form>
       <form className="search-box">
-        <input className="input-text" placeholder="Department Name" />
+        <input
+          className="input-text"
+          placeholder="Department Name"
+          value={enteredDepartment}
+          onChange={departmentChangeHandler}
+        />
       </form>
       <div className="user-list">
         <p>Please choose a person</p>
@@ -43,7 +87,7 @@ const ProjectForm = (props) => {
         <div className="cancel-button" onClick={props.onCancel} type="button">
           Cancel
         </div>
-        <div className="button" onClick={props.onCancel} type="submit">
+        <div className="button" type="submit">
           Add Project
         </div>
       </div>
@@ -51,4 +95,4 @@ const ProjectForm = (props) => {
   );
 };
 
-export default ProjectForm;
+export default NewProject;

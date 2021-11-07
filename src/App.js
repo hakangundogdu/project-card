@@ -35,6 +35,7 @@ const App = () => {
     setProjects((prevProjects) => {
       return [project, ...prevProjects];
     });
+    console.log(project);
   };
 
   const [isEditing, setIsEditing] = useState(false);
@@ -59,7 +60,14 @@ const App = () => {
               </div>
             )}
           </header>
-          <div>{isEditing && <NewProject onCancel={stopEditingHandler} />}</div>
+          <div>
+            {isEditing && (
+              <NewProject
+                onAddProject={addProjectHandler}
+                onCancel={stopEditingHandler}
+              />
+            )}
+          </div>
 
           <form className="search-box">
             <img className="search" src={search} alt="search" />
@@ -68,6 +76,7 @@ const App = () => {
           <div className="project-container">
             {projects.map((project) => (
               <Project
+                key={project.id}
                 project_title={project.project_title}
                 project_department={project.project_department}
                 image_url={project.image_url}
