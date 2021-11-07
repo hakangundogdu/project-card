@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css';
+import './index.scss';
 import search from './images/search.svg';
 import daniel from './images/image-daniel.jpg';
 import kira from './images/image-kira.jpg';
