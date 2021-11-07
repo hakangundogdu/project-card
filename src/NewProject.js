@@ -17,9 +17,9 @@ const NewProject = (props) => {
     setEnteredDepartment(event.target.value);
   };
 
-  // will change
-  //const personChangeHandler = (event) => {
-  //setEnteredPerson(event.target.value); }
+  const personChangeHandler = (event) => {
+    setEnteredPerson(event.target.value);
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -59,22 +59,30 @@ const NewProject = (props) => {
   return (
     <form className="project-form" onSubmit={submitHandler}>
       <h2 className="project-title">Add a New Project</h2>
-      <form className="search-box">
+      <div className="search-box">
         <input
           className="input-text"
           placeholder="Project Title"
           value={enteredTitle}
           onChange={titleChangeHandler}
         />
-      </form>
-      <form className="search-box">
+      </div>
+      <div className="search-box">
         <input
           className="input-text"
           placeholder="Department Name"
           value={enteredDepartment}
           onChange={departmentChangeHandler}
         />
-      </form>
+      </div>
+      <div className="search-box">
+        <input
+          className="input-text"
+          placeholder="Person"
+          value={enteredPerson}
+          onChange={personChangeHandler}
+        />
+      </div>
       <div className="user-list">
         <p>Please choose a person</p>
         <div className="user-container">
@@ -87,7 +95,7 @@ const NewProject = (props) => {
         <div className="cancel-button" onClick={props.onCancel} type="button">
           Cancel
         </div>
-        <div className="button" type="submit">
+        <div className="button" onClick={submitHandler} type="submit">
           Add Project
         </div>
       </div>

@@ -35,6 +35,7 @@ const App = () => {
     setProjects((prevProjects) => {
       return [project, ...prevProjects];
     });
+    setIsEditing(false);
     console.log(project);
   };
 
@@ -68,7 +69,6 @@ const App = () => {
               />
             )}
           </div>
-
           <form className="search-box">
             <img className="search" src={search} alt="search" />
             <input className="input-text" placeholder="Filter projects" />
