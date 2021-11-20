@@ -19,9 +19,7 @@ const NewProject = (props) => {
   };
 
   const personChangeHandler = (url) => {
-    console.log('personcChangeHandler', url);
     setEnteredPerson(url);
-
     setSelected(true);
   };
 

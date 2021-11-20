@@ -1,4 +1,4 @@
-## Proect Card
+## Project Card
 
 - [Live](https://hakangundogdu.github.io/project-card/)
 
